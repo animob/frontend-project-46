@@ -3,5 +3,5 @@
 install:
 		npm ci
 
-help:
+gendiff:
 		node gendiff.js
