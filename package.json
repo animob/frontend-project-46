@@ -6,6 +6,7 @@
   "scripts": {
     "test": "make test"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/animob/frontend-project-46.git"
