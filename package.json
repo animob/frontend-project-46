@@ -7,6 +7,9 @@
     "test": "make test"
   },
   "type": "module",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/animob/frontend-project-46.git"
