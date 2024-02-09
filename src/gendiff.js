@@ -2,8 +2,8 @@
 import { readFileSync } from 'fs';
 
 const genDiff = (file1Path, file2Path, format1, format2) => {
-  const file1Content = fs.readFileSync(file1Path, 'utf-8');
-  const file2Content = fs.readFileSync(file2Path, 'utf-8');
+  const file1Content = readFileSync(file1Path, 'utf-8');
+  const file2Content = readFileSync(file2Path, 'utf-8');
 
   const data1 = JSON.parse(file1Content);
   const data2 = JSON.parse(file2Content);
