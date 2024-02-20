@@ -30,17 +30,17 @@ const compareData = (data1, data2) => {
   };
 };
 
-const genDiff = (file1Path, file2Path, format1, format2) => {
-  const file1Content = readFileSync(file1Path, 'utf-8');
-  const file2Content = readFileSync(file2Path, 'utf-8');
+const genDiff = (data1, data2, format1, format2) => {
+  // const file1Content = readFileSync(file1Path, 'utf-8');
+  // const file2Content = readFileSync(file2Path, 'utf-8');
 
-  const data1 = JSON.parse(file1Content);
-  const data2 = JSON.parse(file2Content);
+  const file1 = JSON.parse(data1);
+  const file2 = JSON.parse(data2);
 
   // console.log('Data from file 1:', data1);
   // console.log('Data from file 2:', data2);
 
-  const diffReport = compareData(data1, data2);
+  const diffReport = compareData(file1, file2);
   console.log('Difference report:', diffReport);
 
   return diffReport;

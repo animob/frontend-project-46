@@ -7,8 +7,6 @@ import genDiff from '../src/gendiff.js';
 const formatOption = (value, _previous) => value;
 
 const genDiffAction = (filePath1, filePath2, options) => {
-  program.outputHelp();
-
   const absolutePath1 = resolve(process.cwd(), filePath1);
   const absolutePath2 = resolve(process.cwd(), filePath2);
 
@@ -16,11 +14,10 @@ const genDiffAction = (filePath1, filePath2, options) => {
   const format1 = extname(absolutePath1).slice(1);
   const format2 = extname(absolutePath2).slice(1);
 
-  const file1 = readFileSync(absolutePath1, 'utf-8');
-  const file2 = readFileSync(absolutePath2, 'utf-8');
+  const data1 = readFileSync(absolutePath1, 'utf-8');
+  const data2 = readFileSync(absolutePath2, 'utf-8');
 
-  const diff = genDiff(file1, file2, options.format || format1, options.format || format2);
-  console.log(diff);
+  const diff = genDiff(data1, data2, options.format || format1, options.format || format2);
 };
 
 program
