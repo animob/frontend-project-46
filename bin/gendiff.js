@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+/* eslint-disable no-undef */
 import { program } from 'commander';
 import { readFileSync } from 'fs';
 import { resolve, extname } from 'path';
 import genDiff from '../src/gendiff.js';
 
-const formatOption = (value, _previous) => value;
+const formatOption = (value) => value;
 
 const genDiffAction = (filePath1, filePath2, options) => {
   const absolutePath1 = resolve(process.cwd(), filePath1);
@@ -18,6 +19,8 @@ const genDiffAction = (filePath1, filePath2, options) => {
   const data2 = readFileSync(absolutePath2, 'utf-8');
 
   const diff = genDiff(data1, data2, options.format || format1, options.format || format2);
+
+  return diff;
 };
 
 program
