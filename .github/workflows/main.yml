@@ -10,5 +10,12 @@ jobs:
         with:
           node-version: 18.x
           cache: 'npm'
-      - run: npm  install
+      - run: npm install
       - run: make lint
+      - run: make test
+      - uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.HEXLET_MAIN }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true

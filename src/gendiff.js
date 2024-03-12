@@ -40,4 +40,5 @@ const genDiff = (data1, data2) => {
   return diffReport;
 };
 
+export { compareData };
 export default genDiff;
